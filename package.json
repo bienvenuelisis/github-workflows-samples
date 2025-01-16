@@ -1,0 +1,8 @@
+{
+  "name": "static-web-site",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "echo 'Building the web app...' && mkdir -p static-web-site && cp -r static-web-site/* build/"
+  },
+  "devDependencies": {}
+}
