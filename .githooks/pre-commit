@@ -16,7 +16,11 @@ fi
 
 # Run the tests : dart test on the dart_console_app
 cd dart_console_app
-dart test
+
+if ! dart test; then
+  echo "Error: Tests failed. Commit aborted."
+  exit 1
+fi
 
 echo "Commit to $current_branch branch is allowed."
 
