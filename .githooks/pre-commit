@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Prevent direct commits to the main branch
+protected_branch="main"
+
+# Get the name of the current branch
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+if [ "$current_branch" = "$protected_branch" ]; then
+  echo "Error: Direct commits to the $protected_branch branch are not allowed."
+  echo "Please create a new branch and commit your changes there."
+  exit 1
+fi
+
+echo "Commit to $current_branch branch is allowed."
