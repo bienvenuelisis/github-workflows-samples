@@ -1,0 +1,28 @@
+name: CI Dart Console
+
+on:
+  push:
+    paths:
+      - 'dart_console_app/**'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Install Dart SDK
+        uses: dart-lang/setup-dart@v1
+        with:
+          sdk: 'latest'
+
+      - name: Get dependencies
+        run: dart pub get
+
+      - name: Run tests
+        run: dart test
+          
+      - run: echo "🍏 This job's status is ${{ job.status }}."
