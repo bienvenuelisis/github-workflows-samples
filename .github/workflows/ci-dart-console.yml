@@ -28,9 +28,14 @@ jobs:
           cd dart_console_app
           dart pub get
 
-      - name: Run tests
+      - name: Build the Dart application
         run: |
           cd dart_console_app
-          dart test
+          dart compile exe bin/main.dart -o bin/main
+
+      - name: Run the Dart application
+        run: |
+          cd dart_console_app
+          ./bin/main
           
       - run: echo "🍏 This job's status is ${{ job.status }}."
