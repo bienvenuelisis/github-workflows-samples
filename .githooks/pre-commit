@@ -12,4 +12,11 @@ if [ "$current_branch" = "$protected_branch" ]; then
   exit 1
 fi
 
+# Before the commit, run the tests. If the tests fail, the commit will be aborted.
+
+# Run the tests : dart test on the dart_console_app
+cd dart_console_app
+dart test
+
 echo "Commit to $current_branch branch is allowed."
+
