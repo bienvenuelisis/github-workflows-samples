@@ -1,2 +1,2 @@
-# github-workflows-samples
+# Github Workflows Samples
 GitHub Workflows Samples for beginners
