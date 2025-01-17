@@ -16,3 +16,4 @@ if [ ${#commit_message} -le 40 ]; then
 fi
 
 echo "Commit message is valid."
+
