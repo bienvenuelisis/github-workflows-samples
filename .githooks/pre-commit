@@ -18,7 +18,7 @@ fi
 cd dart_console_app
 
 if ! dart test; then
-  echo "Error: Tests failed. Commit aborted."
+  echo "Error: Tests failed. Commit aborted. Retry after fixing the tests."
   exit 1
 fi
 
