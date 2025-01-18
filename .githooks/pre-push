@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Check if all files in the .github/workflows, end with .yml
+
+invalid_files=$(find .github/workflows -type f ! -name '*.yml')
+
+if [ -n "$invalid_files" ]; then
+  echo "Error: The following files in .github/workflows do not end with .yml:"
+  echo "$invalid_files"
+  exit 1
+fi
+
+echo "All files in .github/workflows end with .yml. Proceeding with push."

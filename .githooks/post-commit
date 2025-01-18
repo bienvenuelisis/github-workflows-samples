@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Copy hooks from .githooks to .git/hooks
+cp -r .githooks/* .git/hooks/

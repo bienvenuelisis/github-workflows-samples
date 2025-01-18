@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# Get the commit message
+commit_message=$(cat "$1")
+
+# Check if the commit message is unique
+if git log --pretty=%B | grep -qFx "$commit_message"; then
+  echo "Error: Commit message must be unique."
+  exit 1
+fi
+
+# Check if the commit message length exceeds 40 characters
+if [ ${#commit_message} -le 40 ]; then
+  echo "Error: Commit message must be longer than 40 characters."
+  exit 1
+fi
+
+
+
+
+echo "Commit message is valid."
+
